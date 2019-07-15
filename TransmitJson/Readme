@@ -1,0 +1,31 @@
+You have a list containing incoming messages.
+All the messages in the list are plain text, but should be with the following JSON format:
+{
+    "transmitter": "abc:123456",
+    "msg_time": "2019-03-15T10:26:37.951Z",
+    "msg_type": 83,
+    "message": "Hello World"
+}
+
+
+Please write a python code that goes over all the messages in the list, and does the following:
+Make sure the JSON is valid
+
+Make sure the transmitter has the following format: “<3 characters>:<numeric value>”
+Make sure that the message is not older than 7 days
+Msg type is one of the following (0000,83,84)
+Messages that pass all validations should be placed in a corresponding list (list per type)
+Messages that do not pass the validation (or fail for any reason) should be placed in a separate list with the failure reason (text)
+
+https://en.wikipedia.org/wiki/ISO_8601
+
+alias push="git add .;git commit -m 'ff'; git push origin master"
+
+
+
+        ###
+        #
+        # Failed messages should be placed in a separate list with the failure reason
+        # We will sort only by one condition (it can fail more than one validation)
+        #
+        ####
